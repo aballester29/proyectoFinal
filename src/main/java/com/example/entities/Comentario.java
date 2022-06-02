@@ -15,6 +15,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -42,12 +44,13 @@ public class Comentario implements Serializable{
 
 
     //Conexion con usuario
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @NotNull(message = "El comentario tiene que tener un usuario")
     private Usuario usuario;
 
     //Pizza
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @NotNull(message = "El comentario tiene que tener una pizza")
     private Pizza pizza;

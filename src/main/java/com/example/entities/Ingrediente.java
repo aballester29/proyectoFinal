@@ -12,6 +12,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,6 +39,7 @@ public class Ingrediente implements Serializable{
 
 
     // Pizza
+    @JsonIgnore
     @ManyToMany(mappedBy = "ingredientes")
     private List<Pizza> pizzas;
 }
