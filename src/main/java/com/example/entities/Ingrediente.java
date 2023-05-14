@@ -36,7 +36,7 @@ public class Ingrediente implements Serializable{
 
     @Min(value = 0, message = "El precio no puede ser negativo")
     private Double precio;
-
+    
 
     // Pizza
     @JsonIgnore

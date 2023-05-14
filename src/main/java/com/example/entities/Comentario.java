@@ -46,12 +46,12 @@ public class Comentario implements Serializable{
     //Conexion con usuario
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @NotNull(message = "El comentario tiene que tener un usuario")
+    //@NotNull(message = "El comentario tiene que tener un usuario")
     private Usuario usuario;
 
     //Pizza
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @NotNull(message = "El comentario tiene que tener una pizza")
+    //@NotNull(message = "El comentario tiene que tener una pizza")
     private Pizza pizza;
 }
