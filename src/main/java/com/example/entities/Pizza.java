@@ -49,13 +49,13 @@ public class Pizza implements Serializable{
 
 
     //comentarios
-    @JsonIgnore
+    
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "pizza")    
     private List<Comentario> comentarios;
 
-    // ingredientes   
+    // ingredientes  
+    
     @ManyToMany(cascade = {
-        CascadeType.PERSIST,
         CascadeType.MERGE
     })
     @JoinTable(name = "pizza_ingrediente",
